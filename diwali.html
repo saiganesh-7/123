@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diwali Celebration</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: #f9e8c5;
+            overflow-x: hidden;
+        }
+        h1 {
+            color: #FF9800;
+            font-size: 2.5em;
+            margin-top: 20px;
+        }
+        p {
+            margin: 20px;
+            font-size: 1.2em;
+        }
+        .gallery-container {
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            bottom: 0;
+            padding: 20px 0;
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+        .gallery {
+            display: flex;
+            animation: scroll 15s linear infinite;
+        }
+        .gallery img {
+            width: 250px;
+            margin: 0 5px;
+            border-radius: 10px;
+        }
+        @keyframes scroll {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+    </style>
+</head>
+<body>
+    <h1>HAPPY DIWALI</h1>
+    <p><b> <i>Diwali is a festival of lights celebrated across India, symbolizing the victory of light over darkness.
+        Diwali, also called Deepavali. Diwali is the Hindu festival of lights, with variations celebrated in other Indian religions such as Jainism and Sikhism.It symbolises the spiritual "victory of light over darkness, good over evil, and knowledge over ignorance".Diwali is celebrated during the Hindu lunisolar months of Ashvin (according to the amanta tradition) and Kartika—between around mid-September and mid-November.The celebrations generally last five or six days.
+
+Diwali is connected to various religious events, deities and personalities, such as being the day Rama returned to his kingdom in Ayodhya with his wife Sita and his brother Lakshmana after defeating the demon king Ravana.It is also widely associated with Lakshmi, the goddess of prosperity, and Ganesha, the god of wisdom and the remover of obstacles.Other regional traditions connect the holiday to Vishnu, Krishna, Durga, Shiva, Kali, Hanuman, Kubera, Yama, Yami, Dhanvantari, or Vishvakarman.
+   </i></b></p>
+    <div class="gallery-container">
+        <div class="gallery">
+            <img src="https://c4.wallpaperflare.com/wallpaper/885/688/64/diwali-festival-of-lights-4k-wallpaper-thumb.jpg" alt="Diwali Lamp 1">
+            <img src="https://c4.wallpaperflare.com/wallpaper/663/184/887/festivals-holidays-diwali-wallpaper-thumb.jpg" alt="Diwali Lamp 2">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/The_Rangoli_of_Lights.jpg/800px-The_Rangoli_of_Lights.jpg" alt="Diwali Lamp 3">
+            <img src="https://avgtravels.com/au/wp-content/uploads/sites/4/2-12.jpg" alt="Diwali Lamp 4">
+        </div>
+    </div>
+    <script>
+        window.onload = function() {
+            const duration = 7000;
+            const end = Date.now() + duration;
+            const colors = ['#ffeb3b', '#ff5722', '#8F00FF', '#4caf50', '#FFFFFF'];
+            (function firework() {
+                confetti({
+                    particleCount: 50,
+                    spread: 160,
+                    colors: colors,
+                });
+                if (Date.now() < end) {
+                    requestAnimationFrame(firework);
+                }
+            })();
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
+</body>
+</html>
